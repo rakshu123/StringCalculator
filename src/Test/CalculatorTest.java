@@ -47,6 +47,17 @@ public class CalculatorTest {
 	        assertEquals(calculator.Add("1,2,4,1"), 8);
 	        assertEquals(29, calculator.Add("10,15,4"));
 	    }
+	    @Test
+	    public void numbersNewlineDelimitedShouldBeSummed() {
+	        assertEquals(calculator.Add("1\n5"), 6);
+	        assertEquals(calculator.Add("8\n12"), 20);
+	    }
+
+	    @Test
+	    public void threeNumbersDelimitedAnywayShouldBeSummed() {
+	        assertEquals(calculator.Add("4,2,3"), 9);
+	        assertEquals(calculator.Add("7\n3\n3"), 13);
+	    }
 
 
 	  
