@@ -29,6 +29,13 @@ public class CalculatorTest {
 	    public void emptyStringShouldReturn0() {
 	        assertEquals(calculator.Add(""), 0);
 	    }
+	    
+	    @Test
+	    public void stringReturnSameNumber() {
+	        assertEquals(calculator.Add("1"), 1);
+	        assertEquals(calculator.Add("5"), 5);
+	    }
+
 	  
 	  	}
 
