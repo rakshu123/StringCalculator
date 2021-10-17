@@ -48,17 +48,24 @@ public class CalculatorTest {
 	        assertEquals(29, calculator.Add("10,15,4"));
 	    }
 	    @Test
-	    public void numbersNewlineDelimitedShouldBeSummed() {
+	    public void numbersNewlineDelimited() {
 	        assertEquals(calculator.Add("1\n5"), 6);
 	        assertEquals(calculator.Add("8\n12"), 20);
 	    }
 
 	    @Test
-	    public void threeNumbersDelimitedAnywayShouldBeSummed() {
+	    public void threeNumbers() {
 	        assertEquals(calculator.Add("4,2,3"), 9);
 	        assertEquals(calculator.Add("7\n3\n3"), 13);
 	    }
 
+	    @Test
+	    public void negativeInput() {
+	        thrown.expect(IllegalArgumentException.class);
+	        thrown.expectMessage("Negative input!");
+	        calculator.Add("-16");
+	        calculator.Add("-4,10\n-14");
+	    }
 
 	  
 	  	}
