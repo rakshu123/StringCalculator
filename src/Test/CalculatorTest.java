@@ -67,7 +67,12 @@ public class CalculatorTest {
 	        calculator.Add("-4,10\n-14");
 	    }
 
-	  
+	    @Test
+	    public void greaterThan1000AreIgnored() {
+	        assertEquals(calculator.Add("2,14,1001"), 16);
+	        assertEquals(calculator.Add("14124,22\n4,1214"), 26);
+	    }
+
 	  	}
 
 
